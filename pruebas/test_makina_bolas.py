@@ -3,7 +3,7 @@ Pruebas de la clase MakinaBolas
 '''
 
 import unittest
-from makinabolas import MakinaBolas, MONEDA, BOLA, CAPACIDAD
+from makinabolas import MakinaBolas, MONEDA, BOLA, CAPACIDAD, ARCHIVO
 #import makinabolas as mkb
 
 class TestMakina(unittest.TestCase):
@@ -49,3 +49,9 @@ class TestMakina(unittest.TestCase):
         self.assertEqual(resp, BOLA)
         self.assertEqual(makina.deposito, dep-1)
         self.assertEqual(makina.monedero, mon+1)
+
+    def test_lectura_correcta_del_archivo_de_configuracion(self):
+        ''' hola '''
+        makina = MakinaBolas()
+        self.assertEqual(makina.deposito, 73)
+        self.assertEqual(makina.monedero, 27)
